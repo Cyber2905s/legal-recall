@@ -10,7 +10,7 @@ Our system follows a strict **Client-Server architecture** designed for scalabil
 
 ### Architecture Diagram
 *(See the `/docs/design/` folder for high-resolution models)*
-![Architecture Diagram](./docs/design/architecture.png)
+
 
 ### UI Prototypes
 Our user interface focuses on cognitive load reduction by utilizing a split-screen verifiable citation view. Check out our complete Figma UI designs and wireframes in the `/docs/design/` directory.
