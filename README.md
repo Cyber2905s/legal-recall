@@ -1,77 +1,33 @@
-# Overview
+# ⚖️ Legal Recall
 
-Welcome to the legal recall project, a comprehensive chat application with PDF integration for law papers. This project is designed to provide a seamless chat experience where users can upload PDF files, create chats around them, and interact with an AI assistant. The AI assistant uses the OpenAI API to generate responses based on the chat context.
+**Legal Recall** is a comprehensive, AI-powered legal research assistant designed to streamline the workflow of legal professionals, clinics, and law students. By combining secure document upload, advanced vector search, and conversational analysis, users can interrogate complex case laws, statutes, and contracts in moments. 
 
+Our system prioritizes verifiability through a unique "Split-View" interface, ensuring every AI-generated response is directly cited and linked to the source legal document.
 
-# Technologies and Frameworks
+## 📐 Software Design
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Clerk
-- Drizzle ORM
-- PostgreSQL
-- UploadThing
-- OpenAI API
-- Axios
-- Pinecone
-- Drizzle-kit
-- OpenAI Edge
-- Neon Database Serverless
-- Drizzle-orm/neon-http
-- @tanstack/react-query
-- @clerk/nextjs
-- clsx
-- tailwind-merge
+Our system follows a strict **Client-Server architecture** designed for scalability and maintainability. We separated our concerns by decoupling the Next.js frontend presentation layer from the heavy backend AI vectorization logic, ensuring low coupling and high cohesion. For data storage, we utilized a dual-database approach: PostgreSQL handles relational user/session data, while Pinecone manages high-dimensional vector embeddings, optimizing both query speed and semantic accuracy for legal research.
 
-# Installation
+### Architecture Diagram
+*(See the `/docs/design/` folder for high-resolution models)*
+![Architecture Diagram](./docs/design/architecture.png)
 
-Follow the steps below to install and setup the project:
+### UI Prototypes
+Our user interface focuses on cognitive load reduction by utilizing a split-screen verifiable citation view. Check out our complete Figma UI designs and wireframes in the `/docs/design/` directory.
+
+## 🚀 Technologies and Frameworks
+
+- **Frontend:** Next.js, React, TypeScript, Tailwind CSS
+- **Database & ORM:** PostgreSQL (Neon Serverless), Drizzle ORM, Pinecone (Vector DB)
+- **Authentication & Storage:** Clerk, UploadThing
+- **AI & Data Processing:** OpenAI API (Edge), LangChain / Vector Embeddings
+- **Utilities:** Axios, @tanstack/react-query, clsx, tailwind-merge
+
+## 🛠️ Installation & Setup
+
+Follow the steps below to install and run the project locally:
 
 1. **Clone the repository**
-
    Open your terminal and run the following command:
-
    ```bash
-   git clone https://github.com/yantao0527/chatpdf.git
-   ```
-
-2. **Navigate to the project directory**
-
-   ```bash
-   cd chatpdf
-   ```
-
-3. **Install Node.js**
-
-   The project requires Node.js version v18.17.1 or later. You can download it from [here](https://nodejs.org/en/download/).
-
-4. **Install the required dependencies**
-
-   Run the following command to install all the required dependencies:
-
-   ```bash
-   npm install
-   ```
-
-   This will install all the dependencies listed in the `package.json` file, including Next.js, React, React DOM, Axios, Tailwind CSS, and other specific dependencies such as "uploadthing", "@uploadthing/react" and "@clerk/nextjs".
-
-5. **Setup environment variables**
-
-    Create a `.env.local` file in the root directory of your project and add the required environment variables. At minimum, configure `UPLOADTHING_TOKEN`, Clerk keys, Pinecone, and OpenAI.
-    - Pinecone (simplified HTTP config):
-      - `PINECONE_API_KEY`
-      - `PINECONE_HOST` (e.g. `chatpdf-<project>.svc.<env>.pinecone.io`)
-      - `PINECONE_INDEX` (e.g. `chatpdf`)
-      - `PINECONE_DIMENSION` (must equal your index dimension, e.g. `512`)
-
-6. **Run the project**
-
-    Now, you can run the project using the following command:
-
-    ```bash
-    npm run dev
-    ```
-
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   git clone [https://github.com/your-username/legal-recall.git](https://github.com/your-username/legal-recall.git)
